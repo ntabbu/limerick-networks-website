@@ -1,0 +1,6 @@
+# Resumes: no directory listing, no script execution
+Options -Indexes
+<FilesMatch "\.(php|phtml|php[0-9]|phar|html?|js|cgi|pl|py|sh)$">
+  Require all denied
+</FilesMatch>
+php_flag engine off
