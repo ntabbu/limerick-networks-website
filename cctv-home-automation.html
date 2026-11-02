@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CCTV & Home Automation | Limerick Network</title>
+<meta name="description" content="Limerick provides internet leased lines, business connectivity, fiber broadband and OTT services. Explore business internet, SD-WAN and cloud services across India. Offices in Pune.">
+<meta name="theme-color" content="#0a1f44">
+<meta property="og:title" content="LimericK | Connectivity Across India">
+<meta property="og:description" content="Business internet, leased lines, fiber broadband, SD-WAN and cloud connectivity.">
+<meta property="og:type" content="website">
+<style>
+:root{--navy:#0a1f44;--navy2:#102f66;--blue:#1558d6;--blue-d:#0f46b0;--cyan:#00b4d8;--cyan-l:#7fe0f5;--ink:#0b1b33;--text:#4a5a72;--muted:#667085;--line:#e3e9f3;--bg:#f4f7fc;--r:18px;--sh:0 10px 30px rgba(10,31,68,.08);--sh2:0 24px 56px rgba(10,31,68,.16)}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;color:var(--text);line-height:1.65;background:#fff;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+ul{list-style:none}
+button,input,select,textarea{font:inherit;color:inherit}
+h1,h2,h3,h4{color:var(--ink);line-height:1.18;letter-spacing:-.02em;font-weight:800}
+:focus-visible{outline:3px solid var(--cyan);outline-offset:2px;border-radius:4px}
+.ic{width:1em;height:1em;stroke:currentColor;fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;flex:none;vertical-align:-.125em}
+.skip{position:absolute;left:-999px;top:8px;background:#fff;color:var(--navy);padding:10px 16px;border-radius:8px;z-index:3000;font-weight:700}
+.skip:focus{left:12px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.sec{padding:92px 0}.alt{background:var(--bg)}
+.eyebrow{display:inline-block;color:var(--blue);font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.h2{font-size:clamp(28px,3.4vw,40px);margin-bottom:14px}
+.lead{font-size:17px;max-width:680px}
+.center{text-align:center}.center .lead{margin-inline:auto}
+.head{margin-bottom:50px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:2px solid transparent;cursor:pointer;border-radius:999px;padding:13px 26px;font-weight:700;font-size:15px;line-height:1.2;transition:transform .2s,background .2s,box-shadow .2s,color .2s,border-color .2s;text-align:center}
+.btn-p{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(21,88,214,.3)}.btn-p:hover{background:var(--blue-d);transform:translateY(-2px)}
+.btn-o{border-color:var(--line);background:#fff;color:var(--ink)}.btn-o:hover{border-color:var(--blue);color:var(--blue)}
+.btn-w{background:#fff;color:var(--navy)}.btn-w:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(0,0,0,.22)}
+.btn-g{border-color:rgba(255,255,255,.5);color:#fff}.btn-g:hover{background:rgba(255,255,255,.14);border-color:#fff}
+.btn-wa{background:#128c4a;color:#fff}.btn-wa:hover{background:#0e7a40;transform:translateY(-2px)}
+.btn-block{width:100%}
+.acts{display:flex;gap:14px;flex-wrap:wrap}
+
+/* top bar */
+.topbar{background:var(--navy);color:#cbd5e1;font-size:13px}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;gap:14px;flex-wrap:wrap;min-height:46px;padding-block:5px}
+.tb-l,.tb-r{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.topbar a:hover{color:#fff}
+.topbar .ic{color:var(--cyan-l);margin-right:7px}
+.tb-pill{border:1px solid rgba(255,255,255,.3);border-radius:999px;padding:5px 16px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:#fff}
+.tb-pill:hover{background:#fff;color:var(--navy)!important}
+.tb-pill.fill{background:var(--cyan);border-color:var(--cyan);color:var(--navy)}
+.tb-pill .ic{color:inherit;margin-right:6px}
+
+/* header */
+.header{position:sticky;top:0;z-index:1000;background:rgba(255,255,255,.97);border-bottom:1px solid var(--line);backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;gap:20px;min-height:78px;position:relative}
+.logo{display:inline-flex;align-items:center;gap:0;font-size:39px;font-weight:900;color:#f42f61;letter-spacing:-.065em;line-height:1;white-space:nowrap;font-family:Arial,Helvetica,sans-serif}
+.logo-mark{display:none}
+.logo-word{display:inline-block}
+.logo-word .k{color:#f42f61;font-weight:900}
+.footer .logo{color:#fff}
+.nav{display:flex;align-items:center;gap:2px}
+.nav>a,.dd>button{display:inline-flex;align-items:center;gap:6px;background:none;border:0;cursor:pointer;font-weight:600;font-size:15px;color:var(--ink);padding:10px 14px;border-radius:8px;transition:color .2s,background .2s}
+.nav>a:hover,.dd>button:hover,.dd:focus-within>button{color:var(--blue);background:#eef4ff}
+.dd{position:relative}
+.dd>button .ic{width:.8em;height:.8em;transition:transform .2s}
+.dd:hover>button .ic,.dd.open>button .ic{transform:rotate(180deg)}
+.dd-menu{position:absolute;top:calc(100% + 4px);left:0;min-width:300px;background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--sh2);padding:8px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .2s}
+.dd:hover .dd-menu,.dd:focus-within .dd-menu,.dd.open .dd-menu{opacity:1;visibility:visible;transform:none}
+.dd-menu a{display:flex;gap:13px;align-items:center;padding:11px 12px;border-radius:11px;font-weight:600;font-size:14.5px;color:var(--ink)}
+.dd-menu a:hover{background:#eef4ff;color:var(--blue)}
+.dd-menu .ic{width:21px;height:21px;color:var(--blue)}
+.burger{display:none;width:46px;height:46px;border:1px solid var(--line);border-radius:12px;background:#fff;cursor:pointer;align-items:center;justify-content:center;flex-direction:column;gap:5px}
+.burger span{display:block;width:20px;height:2px;background:var(--navy);border-radius:2px}
+
+/* hero */
+.hero{position:relative;background:var(--navy);color:#fff;overflow:hidden;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:0;z-index:-2;background:radial-gradient(900px 520px at 90% -10%,rgba(21,88,214,.75),transparent 62%),radial-gradient(700px 500px at -8% 112%,rgba(0,180,216,.3),transparent 60%),linear-gradient(180deg,#0a1f44,#081a3a)}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;opacity:.5;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:radial-gradient(ellipse at 28% 40%,#000 15%,transparent 75%);mask-image:radial-gradient(ellipse at 28% 40%,#000 15%,transparent 75%)}
+.hero-g{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;padding:84px 0 92px}
+.pill{display:inline-flex;align-items:center;gap:8px;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);color:#e0f2fe;font-size:13px;font-weight:700;padding:7px 15px;border-radius:999px;margin-bottom:24px}
+.pill .ic{color:var(--cyan-l)}
+.hero h1{color:#fff;font-size:clamp(36px,5vw,60px);line-height:1.07;letter-spacing:-.03em;margin-bottom:20px}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--cyan-l),#bfdbfe);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .sub{font-size:18.5px;color:#cbd5e1;max-width:560px;margin-bottom:30px}
+.hero-pts{display:flex;flex-wrap:wrap;gap:12px 26px;margin-top:32px}
+.hero-pts li{display:flex;align-items:center;gap:9px;font-size:14.5px;font-weight:600;color:#e2e8f0}
+.hero-pts .ic{color:var(--cyan-l);stroke-width:3}
+.vis{position:relative;display:grid;place-items:center;min-height:360px}
+.orb{position:relative;width:260px;height:260px;border-radius:50%;display:grid;place-items:center;font-size:100px;color:#fff;background:linear-gradient(135deg,var(--blue),var(--cyan));box-shadow:0 28px 70px rgba(0,180,216,.32)}
+.orb::before,.orb::after{content:"";position:absolute;border-radius:50%;border:2px solid rgba(255,255,255,.22)}
+.orb::before{inset:-24px}.orb::after{inset:-52px;border-color:rgba(255,255,255,.1)}
+.chip{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;color:var(--ink);border-radius:14px;padding:11px 16px;font-weight:700;font-size:14px;box-shadow:0 16px 34px rgba(0,0,0,.25);animation:float 5s ease-in-out infinite}
+.chip .ic{color:var(--blue);font-size:19px}
+.chip.c1{top:10px;left:0}.chip.c2{top:44%;right:-6px;animation-delay:-1.6s}.chip.c3{bottom:8px;left:12%;animation-delay:-3.2s}
+@keyframes float{50%{transform:translateY(-10px)}}
+
+/* promo slider */
+.promo{background:#fff;padding:56px 0 20px}
+.sl{position:relative;border-radius:26px;overflow:hidden;background:var(--navy);color:#fff;box-shadow:var(--sh2)}
+.sl-track{display:grid}
+.sl-slide{grid-area:1/1;display:grid;grid-template-columns:1.2fr .8fr;gap:40px;align-items:center;padding:56px 60px 84px;opacity:0;visibility:hidden;transition:opacity .7s ease,visibility .7s;background:linear-gradient(120deg,var(--navy),var(--navy2) 60%,#1558d6)}
+.sl-slide:nth-child(2){background:linear-gradient(120deg,#0b2a5c,#0e3b86 55%,#0a8fb0)}
+.sl-slide.on{opacity:1;visibility:visible}
+.sl-slide h2{color:#fff;font-size:clamp(26px,3.2vw,38px);margin-bottom:12px}
+.sl-slide p{color:#d4e0f2;max-width:520px;margin-bottom:24px}
+.sl-slide .tag{display:inline-block;color:var(--cyan-l);font-weight:800;font-size:12.5px;letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px}
+.sl-art{display:grid;place-items:center}
+.sl-art .orb{width:190px;height:190px;font-size:76px}
+.sl-art .orb::before{inset:-16px}.sl-art .orb::after{inset:-34px}
+.sl-ctrl{position:absolute;left:0;right:0;bottom:24px;display:flex;justify-content:center;align-items:center;gap:12px}
+.sl-ctrl .cb{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.4);background:rgba(10,31,68,.35);color:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.sl-ctrl .cb:hover{background:var(--blue)}
+.sl-dots{display:flex;gap:9px}
+.sl-dots button{width:11px;height:11px;border-radius:10px;border:0;padding:0;background:rgba(255,255,255,.4);cursor:pointer;transition:width .3s,background .3s}
+.sl-dots button.on{width:34px;background:var(--cyan)}
+
+/* logos */
+.logos{padding:34px 0 44px;overflow:hidden}
+.logos .lbl{text-align:center;font-size:12.5px;font-weight:800;letter-spacing:.16em;text-transform:uppercase;color:#8a97ab;margin-bottom:22px}
+.marq{display:flex;width:max-content;gap:56px;align-items:center;animation:scroll 34s linear infinite}
+.logos:hover .marq{animation-play-state:paused}
+.marq li{height:56px;min-width:110px;display:flex;align-items:center;justify-content:center;font-weight:700;color:#8a97ab}
+.marq img{max-height:100%;width:auto;filter:grayscale(1);opacity:.75;transition:filter .3s,opacity .3s,transform .3s}
+.marq li:hover img{filter:none;opacity:1;transform:scale(1.1)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* lead */
+.lead-sec{background:linear-gradient(120deg,var(--navy),var(--navy2) 60%,#1558d6);color:#cbd5e1}
+.lead-g{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:start}
+.lead-sec h2{color:#fff}.lead-sec .eyebrow{color:var(--cyan-l)}
+.lead-list{margin-top:26px;display:grid;gap:14px}
+.lead-list li{display:flex;gap:12px;align-items:flex-start;color:#e2e8f0;font-weight:500}
+.lead-list .ic{margin-top:5px;color:var(--cyan-l);stroke-width:3}
+.card{background:#fff;color:var(--text);border-radius:24px;padding:34px;box-shadow:var(--sh2)}
+.card h3{font-size:24px;margin-bottom:4px}
+.card>p{font-size:14.5px;margin-bottom:20px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.f{margin-bottom:14px}
+.f label{display:block;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:6px}
+.f label i{font-style:normal;color:#c0262d}
+.f input,.f select,.f textarea{width:100%;padding:12px 14px;border:1px solid #c5cfdf;border-radius:12px;font-size:15px;background:#fff;color:var(--ink);transition:border-color .2s,box-shadow .2s}
+.f textarea{resize:vertical;min-height:90px}
+.f input:focus,.f select:focus,.f textarea:focus{outline:none;border-color:var(--blue);box-shadow:0 0 0 4px rgba(21,88,214,.15)}
+.f [aria-invalid="true"]{border-color:#c0262d}
+.err{display:block;font-size:12.5px;color:#c0262d;margin-top:4px}
+.consent{display:flex;gap:10px;align-items:flex-start;font-size:13px;margin:4px 0 16px}
+.consent input{width:18px;height:18px;margin-top:3px;flex:none;accent-color:var(--blue)}
+.hp{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+.status{display:none;margin-top:16px;padding:14px 16px;border-radius:12px;font-size:14.5px;font-weight:600}
+.status.ok{display:block;background:#e7f7ee;color:#0b5d33;border:1px solid #b6e4c9}
+.status.bad{display:block;background:#fdecec;color:#8a1c22;border:1px solid #f4c3c5}
+.status a{text-decoration:underline}
+
+/* services */
+.svc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.svc{position:relative;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:28px 24px;display:flex;flex-direction:column;transition:transform .3s cubic-bezier(.2,.8,.2,1),box-shadow .3s,border-color .3s}
+.svc:hover,.svc:focus-within{transform:translateY(-8px);box-shadow:var(--sh2);border-color:#b9d0fb}
+.svc .ico{width:54px;height:54px;border-radius:15px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;display:grid;place-items:center;font-size:24px;margin-bottom:18px;box-shadow:0 10px 20px rgba(21,88,214,.25)}
+.svc h3{font-size:18px;margin-bottom:8px}
+.svc p{font-size:14.5px;margin-bottom:14px}
+.svc .more{margin-top:auto;display:inline-flex;align-items:center;gap:7px;font-weight:700;font-size:14px;color:var(--blue);transition:gap .2s}
+.svc .more:hover{gap:11px}
+.tagb{position:absolute;top:16px;right:16px;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;border-radius:999px;padding:4px 10px;background:#eaf1ff;color:var(--blue-d)}
+
+/* why */
+.why-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.why{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:30px 24px;text-align:center;transition:transform .3s,box-shadow .3s}
+.why:hover{transform:translateY(-6px);box-shadow:var(--sh)}
+.why strong{display:block;font-size:38px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin-bottom:6px}
+.why strong small{font-size:18px;color:var(--blue);margin-left:2px}
+.why span{font-weight:700;color:var(--ink);display:block;margin-bottom:6px}
+.why p{font-size:14px}
+.feat-g{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:22px}
+.feat{display:flex;gap:14px;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px}
+.feat .ico{flex:none;width:46px;height:46px;border-radius:12px;background:#eaf1ff;color:var(--blue);display:grid;place-items:center;font-size:21px}
+.feat h3{font-size:16px;margin-bottom:4px}.feat p{font-size:14px}
+
+/* plans */
+.plans{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;align-items:stretch}
+.plan{position:relative;background:#fff;border:1px solid var(--line);border-radius:22px;padding:36px 32px;display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.plan:hover{transform:translateY(-8px);box-shadow:var(--sh2)}
+.plan.pop{border:2px solid var(--blue);box-shadow:0 24px 54px rgba(21,88,214,.18)}
+.badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--blue);color:#fff;font-size:11.5px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;padding:6px 16px;border-radius:999px;white-space:nowrap}
+.plan h3{font-size:14px;font-weight:800;color:var(--muted);letter-spacing:.1em;text-transform:uppercase}
+.speed{font-size:48px;font-weight:800;color:var(--navy);letter-spacing:-.03em;line-height:1.1;margin:8px 0 2px}
+.speed small{font-size:18px;color:var(--blue);margin-left:4px}
+.price{font-size:30px;font-weight:800;color:var(--ink);margin-top:12px}
+.price small{font-size:14px;font-weight:600;color:var(--muted)}
+.cond{font-size:13px;color:var(--muted);margin:2px 0 20px}
+.plan ul{border-top:1px solid var(--line);padding-top:20px;margin-bottom:26px;display:grid;gap:12px}
+.plan li{display:flex;gap:12px;align-items:center;font-size:15px;font-weight:500;color:var(--ink)}
+.plan li .ic{width:22px;height:22px;padding:5px;border-radius:50%;background:#eaf1ff;color:var(--blue);stroke-width:3}
+.plan .btns{margin-top:auto;display:grid;gap:10px}
+.plan-note{margin-top:28px;text-align:center;font-size:14px;color:var(--muted)}
+
+/* coverage */
+.cov-g{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.ticks{display:grid;gap:12px;margin:22px 0 28px}
+.ticks li{display:flex;gap:12px;align-items:flex-start;font-weight:500;color:var(--ink)}
+.ticks .ic{margin-top:5px;color:var(--blue);stroke-width:3}
+.offices{display:grid;gap:16px}
+.office{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:flex-start;transition:box-shadow .25s,transform .25s}
+.office:hover{box-shadow:var(--sh);transform:translateY(-3px)}
+.office .ico{flex:none;width:48px;height:48px;border-radius:13px;background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;display:grid;place-items:center;font-size:21px}
+.office small{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.office h3{font-size:18px;margin:2px 0 6px}
+.office a.lnk{color:var(--blue);font-weight:700;font-size:14px}
+
+/* ott */
+.ott{background:linear-gradient(120deg,var(--navy),var(--navy2) 62%,#1558d6);color:#cbd5e1;position:relative;overflow:hidden}
+.ott::before{content:"";position:absolute;right:-120px;top:-120px;width:480px;height:480px;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.35),transparent 65%)}
+.ott-g{display:grid;grid-template-columns:1.1fr .9fr;gap:56px;align-items:center;position:relative}
+.ott h2{color:#fff}.ott .eyebrow{color:var(--cyan-l)}.ott .lead{color:#cbd5e1;margin-bottom:28px}
+.stats{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.stat{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.18);border-radius:16px;padding:16px 28px;text-align:center}
+.stat strong{display:block;color:#fff;font-size:32px;line-height:1.1}
+.stat span{font-size:13.5px}
+.tvbox{display:grid;place-items:center}
+.tv{width:min(100%,380px);aspect-ratio:16/10;border-radius:22px;border:8px solid #0b1b33;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;font-size:76px;color:#fff;box-shadow:0 30px 60px rgba(0,0,0,.35);position:relative}
+.tv::after{content:"";position:absolute;bottom:-26px;left:50%;transform:translateX(-50%);width:34%;height:10px;border-radius:0 0 10px 10px;background:#0b1b33}
+.live{position:absolute;top:14px;left:16px;display:flex;align-items:center;gap:7px;font-size:12px;font-weight:800;letter-spacing:.1em;background:rgba(10,31,68,.6);border-radius:999px;padding:4px 12px}
+.live::before{content:"";width:8px;height:8px;border-radius:50%;background:#ff4d4d}
+
+/* faq */
+.faq-g{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}
+.faq-l{display:grid;gap:12px}
+.faq{background:#fff;border:1px solid var(--line);border-radius:14px;transition:border-color .2s,box-shadow .2s}
+.faq[open]{border-color:#b9d0fb;box-shadow:var(--sh)}
+.faq summary{cursor:pointer;list-style:none;padding:19px 24px;font-weight:700;color:var(--ink);display:flex;justify-content:space-between;gap:16px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary .ic{color:var(--blue);transition:transform .25s}
+.faq[open] summary .ic{transform:rotate(45deg)}
+.faq div{padding:0 24px 22px;font-size:15px}
+
+/* contact */
+.conn{background:var(--navy);color:#cbd5e1}
+.conn-g{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+.conn h2{color:#fff}.conn .eyebrow{color:var(--cyan-l)}
+.conn-boxes{display:grid;gap:14px}
+.cbox{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.14);border-radius:16px;padding:16px 20px;transition:background .2s,transform .2s}
+.cbox:hover{background:rgba(255,255,255,.13);transform:translateX(4px)}
+.cbox .ico{flex:none;width:48px;height:48px;border-radius:13px;background:var(--blue);color:#fff;display:grid;place-items:center;font-size:20px}
+.cbox small{display:block;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#94a3b8}
+.cbox strong{color:#fff;font-size:19px}
+
+/* footer */
+.footer{background:#07142a;color:#9fb0c8;padding:72px 0 0}
+.f-g{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.3fr;gap:40px;padding-bottom:52px}
+.footer .logo{color:#f42f61;display:inline-block;margin-bottom:16px}
+.footer p{font-size:14.5px;max-width:330px;margin-bottom:20px}
+.footer h4{color:#fff;font-size:15px;margin-bottom:18px;letter-spacing:0}
+.footer li{margin-bottom:11px;font-size:14.5px}
+.footer a:hover{color:var(--cyan-l)}
+.soc{display:flex;gap:12px;align-items:center}
+.soc a{width:46px;height:46px;border-radius:14px;background:rgba(255,255,255,.08);color:#fff;display:grid;place-items:center;font-size:22px;transition:transform .2s,box-shadow .2s;box-shadow:0 3px 10px rgba(0,0,0,.12)}
+.soc a .ic{width:23px;height:23px;stroke:currentColor;stroke-width:2}
+.soc a:nth-child(1){background:#1877F2}
+.soc a:nth-child(2){background:linear-gradient(135deg,#833AB4 0%,#E1306C 55%,#FCAF45 100%)}
+.soc a:nth-child(3){background:#FF0033}
+.soc a:nth-child(4){background:#25D366;color:#fff}
+.soc a:hover{transform:translateY(-3px) scale(1.04);box-shadow:0 7px 16px rgba(0,0,0,.22)}
+.fb{border-top:1px solid rgba(255,255,255,.1);padding:22px 0;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:13.5px}
+.fb nav{display:flex;gap:22px;flex-wrap:wrap}
+
+/* floating */
+.wa{position:fixed;right:22px;bottom:22px;width:58px;height:58px;border-radius:50%;background:#128c4a;color:#fff;font-size:28px;display:grid;place-items:center;box-shadow:0 10px 26px rgba(18,140,74,.45);z-index:900;transition:transform .2s}
+.wa:hover{transform:scale(1.08)}
+.mbar{display:none}
+
+.rv{opacity:1}
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+
+@media(max-width:1100px){.svc-g,.feat-g{grid-template-columns:repeat(2,1fr)}.plans{grid-template-columns:repeat(2,1fr)}.why-g{grid-template-columns:repeat(2,1fr)}.nav>a,.dd>button{padding:10px 9px;font-size:14.5px}}
+@media(max-width:960px){
+.burger{display:flex}
+.nav{display:none;position:absolute;top:100%;left:-24px;right:-24px;background:#fff;border-bottom:1px solid var(--line);box-shadow:0 18px 30px rgba(10,31,68,.12);flex-direction:column;align-items:stretch;padding:12px 20px 20px;gap:2px;max-height:75vh;overflow-y:auto}
+.nav.open{display:flex}
+.nav>a,.dd>button{width:100%;justify-content:space-between;padding:14px 12px}
+.dd-menu{position:static;opacity:1;visibility:visible;transform:none;box-shadow:none;border:0;padding:0 0 6px 10px;min-width:0;display:none}
+.dd.open .dd-menu{display:block}
+.bar>.btn{display:none}
+.hero-g,.lead-g,.cov-g,.ott-g,.faq-g,.conn-g{grid-template-columns:1fr;gap:40px}
+.hero-g{padding:60px 0 70px}
+.vis{min-height:300px}
+.sl-slide{grid-template-columns:1fr;padding:44px 32px 84px}.sl-art{display:none}
+.f-g{grid-template-columns:1fr 1fr}
+}
+@media(max-width:680px){
+.sec{padding:66px 0}
+.tb-r .hide-m{display:none}
+.svc-g,.plans,.why-g,.feat-g,.row,.f-g{grid-template-columns:1fr}
+.card{padding:26px 22px}
+.chip.c2{right:0}
+.orb{width:210px;height:210px;font-size:80px}
+.sl-slide{padding:36px 24px 84px}
+.wa{display:none}
+.mbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:900;background:#fff;border-top:1px solid var(--line);box-shadow:0 -8px 24px rgba(10,31,68,.12)}
+.mbar a{display:flex;align-items:center;justify-content:center;gap:9px;padding:15px;font-weight:700;color:var(--navy)}
+.mbar a:last-child{background:#128c4a;color:#fff}
+body{padding-bottom:52px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.marq,.chip{animation:none}*{transition-duration:.01ms!important}}
+.head-enquiry{padding:12px 26px;text-transform:uppercase;letter-spacing:.1em;font-size:12px}
+.nav>a,.dd>button{text-transform:uppercase;font-size:13px;letter-spacing:.035em;font-weight:750}
+.pill{border:0;background:transparent;border-radius:0;padding:0;color:#fff;text-transform:uppercase;letter-spacing:.08em}
+@media(max-width:760px){.logo{font-size:33px}}
+
+/* LIMERICK NETWORK — original visual refresh inspired by enterprise connectivity sites */
+:root{--navy:#07152f;--navy2:#102858;--blue:#2563eb;--blue-d:#1745b7;--cyan:#38d9f5;--cyan-l:#a5f3fc;--ink:#0a1730;--text:#43516a;--muted:#718096;--line:#dce5f2;--bg:#f3f7fc;--r:22px;--sh:0 12px 35px rgba(7,21,47,.09);--sh2:0 28px 75px rgba(7,21,47,.2)}
+body{background:#f8faff;color:#43516a;letter-spacing:.005em}h1,h2,h3,h4{letter-spacing:-.035em}::selection{background:#38d9f5;color:#07152f}
+.topbar{background:#061128;color:#c5d2e7}.topbar .ic{color:#38d9f5}.header{background:rgba(255,255,255,.93);box-shadow:0 8px 30px rgba(7,21,47,.045);border-bottom:1px solid rgba(220,229,242,.85)}.bar{min-height:84px}.logo{font-size:36px;letter-spacing:-.075em;color:#0b1c3d}.logo-word{color:#0b1c3d}.logo-word:after{content:" NETWORK";font-size:.31em;letter-spacing:.17em;color:#2563eb;display:block;margin-top:5px;font-weight:850}.footer .logo-word{color:#fff}.footer .logo-word:after{color:#38d9f5}
+.nav>a,.dd>button{border-radius:12px;text-transform:none;font-size:14px;letter-spacing:0;font-weight:750;padding:12px 13px}.nav>a:hover,.dd>button:hover,.dd:focus-within>button{background:#eaf3ff;color:#1745b7}.dd-menu{min-width:325px;padding:11px;border:1px solid #d9e7f8;border-radius:19px;background:rgba(255,255,255,.98);box-shadow:0 24px 60px rgba(7,21,47,.19)}.dd-menu a{padding:13px 12px;border-radius:13px;gap:13px;font-size:14px}.dd-menu a .ic{width:40px;height:40px;padding:10px;border-radius:12px;background:linear-gradient(135deg,#e0f2fe,#e0e7ff);color:#1745b7}.dd-menu a:hover{background:#f0f7ff;transform:translateX(3px)}.btn{border-radius:12px;padding:14px 23px}.btn-p{background:linear-gradient(115deg,#2563eb,#1648c8);box-shadow:0 10px 24px rgba(37,99,235,.25)}.btn-p:hover{background:linear-gradient(115deg,#1745b7,#0e7490)}.head-enquiry{text-transform:none;letter-spacing:0;font-size:14px}
+.hero{background:#06152f}.hero::before{background-image:linear-gradient(90deg,rgba(4,15,37,.96) 0%,rgba(4,15,37,.88) 42%,rgba(4,15,37,.35) 100%),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2200&q=85');background-position:center;background-size:cover;opacity:1}.hero::after{opacity:.25;background-size:48px 48px}.hero-g{padding:104px 0 105px;gap:45px}.hero h1{font-size:clamp(42px,5.4vw,68px);max-width:760px;line-height:1.03;color:#fff}.hero h1 em{font-style:normal;color:#59e1f6}.hero .sub{font-size:18px;max-width:620px;color:#d1ddf1;line-height:1.8}.hero .pill{color:#a5f3fc;font-size:12px;letter-spacing:.14em;font-weight:850;margin-bottom:18px}.hero .pill .ic{background:rgba(56,217,245,.15);border:1px solid rgba(56,217,245,.35);padding:8px;width:34px;height:34px;border-radius:11px}.hero .btn-g{border:1px solid rgba(255,255,255,.35);border-radius:12px;background:rgba(255,255,255,.07)}.hero-pts{gap:12px 22px}.hero-pts li{color:#dce9fb}.hero-pts .ic{color:#53e4c2}.vis{min-height:360px}.orb{background:radial-gradient(circle at 35% 25%,#5ce5f8,#2871ee 45%,#10275c 78%);border:1px solid rgba(255,255,255,.25);box-shadow:0 0 0 18px rgba(56,217,245,.06),0 0 0 42px rgba(56,217,245,.035),0 35px 90px rgba(0,0,0,.25);color:white}.chip{border:1px solid rgba(255,255,255,.18);background:rgba(10,28,65,.84);color:#f4f8ff;border-radius:14px;box-shadow:0 14px 34px rgba(0,0,0,.2);backdrop-filter:blur(14px);padding:12px 16px}.chip .ic{color:#57e0f5}
+.promo{background:#07152f;padding:36px 0 64px}.sl-slide{border-radius:24px;background:linear-gradient(120deg,#12366f,#1453b8 62%,#087d9e);border:1px solid rgba(255,255,255,.15);box-shadow:0 24px 55px rgba(7,21,47,.18)}.sl-slide h2{color:#fff;font-size:clamp(28px,3vw,42px)}.sl-slide p{color:#d9e7ff}.sl-art .orb{background:radial-gradient(circle at 30% 20%,#a5f3fc,#3b82f6 50%,#172554);width:200px;height:200px}.sl-ctrl .cb{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.25)}.sl-dots button{background:#8ba5d2}.sl-dots button.on{background:#55e4f6}
+.logos{background:linear-gradient(110deg,#0b1d43,#13356e);padding:34px 0 38px;border-block:1px solid rgba(255,255,255,.1)}.logos .lbl{color:#fff;font-weight:850;letter-spacing:.02em;font-size:17px;margin-bottom:24px}.marq{gap:18px}.marq li{background:#fff;border-radius:15px;padding:13px 20px;min-width:135px;min-height:72px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 26px rgba(0,0,0,.13);border:1px solid rgba(255,255,255,.65)}.marq img{max-height:46px;max-width:112px;object-fit:contain}
+.sec{padding:100px 0}.alt{background:linear-gradient(180deg,#f1f6ff,#f8fbff)}.eyebrow{color:#2563eb;letter-spacing:.14em}.h2{font-size:clamp(30px,3.7vw,46px);line-height:1.1}.head{margin-bottom:52px}.lead{line-height:1.8;color:#586981}.svc-g,.feat-g{gap:22px}.svc,.feat,.why,.plan,.card{border:1px solid #e0e9f5;border-radius:22px;box-shadow:0 10px 30px rgba(7,21,47,.055);transition:transform .25s,box-shadow .25s,border-color .25s}.svc:hover,.feat:hover,.why:hover,.plan:hover{transform:translateY(-7px);box-shadow:0 22px 45px rgba(7,21,47,.12);border-color:#b9d5ff}.svc{padding:30px;background:linear-gradient(150deg,#fff,#f8fbff)}.svc .ico,.why .ico{border-radius:15px;background:linear-gradient(135deg,#dbeafe,#cffafe);color:#1745b7;width:54px;height:54px;display:grid;place-items:center}.svc .ico .ic{width:27px;height:27px}.tagb{border-radius:999px;background:#eaf3ff;color:#1745b7}.more{font-weight:800;color:#1754cb}.why-g{gap:18px}.why{background:#fff;padding:25px;border-top:3px solid #38d9f5}.why strong{color:#1745b7}.plan{background:#fff}.plan.featured{background:linear-gradient(150deg,#0b1e45,#123d86);color:#fff}.plan.featured h3,.plan.featured h2,.plan.featured p{color:#fff}.lead-sec{background:linear-gradient(120deg,#07152f,#12376d 70%,#075b7c);color:#fff}.lead-sec h2,.lead-sec h3{color:#fff}.lead-sec .eyebrow{color:#65e5f5}.lead-sec .lead{color:#d0def2}.lead-sec .card{background:rgba(255,255,255,.97)}.lead-sec input,.lead-sec select,.lead-sec textarea{border-radius:12px;border-color:#dbe6f5}.cov-g{align-items:center}.cov-g:before{content:"";display:block;min-height:350px;border-radius:26px;background:linear-gradient(0deg,rgba(7,21,47,.18),rgba(7,21,47,.05)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1200&q=85') center/cover;box-shadow:0 20px 50px rgba(7,21,47,.16)}.conn{background:linear-gradient(115deg,#07152f,#0e2b5d 70%,#075b7c)}.conn .h2,.conn h2{color:#fff}.cbox{border:1px solid rgba(255,255,255,.15);border-radius:16px;background:rgba(255,255,255,.07)}.cbox .ico{background:linear-gradient(135deg,#2563eb,#06b6d4)}.footer{background:#050e21}.footer .logo{color:#fff}.footer .fb{border-color:rgba(255,255,255,.12)}
+.page-detail{position:relative;overflow:hidden;background:#07152f;padding:90px 0 100px}.page-detail:before{content:"";position:absolute;inset:0;background:linear-gradient(100deg,rgba(4,15,37,.97),rgba(4,15,37,.78)),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=2000&q=80') center/cover;pointer-events:none}.page-detail>.wrap{position:relative}.detail-card{max-width:900px;background:rgba(255,255,255,.96);border:1px solid rgba(255,255,255,.5);border-radius:28px;padding:clamp(30px,5vw,58px);box-shadow:0 30px 90px rgba(0,0,0,.24)}.detail-card h1{font-size:clamp(38px,5vw,60px);color:#07152f;margin-bottom:18px}.detail-card>p{font-size:17px;line-height:1.85}.detail-card .eyebrow{display:inline-flex;padding:8px 13px;border-radius:999px;background:#e8f5ff;color:#1754cb}.detail-note{background:#f0f7ff;border-left:3px solid #38d9f5;padding:14px 18px;border-radius:0 12px 12px 0}.detail-actions{gap:12px}.detail-actions .btn-o{border-color:#d8e4f3;background:#fff}
+.faq{border:1px solid #dfe8f5;border-radius:15px;background:#fff;padding:20px 22px}.faq[open]{box-shadow:var(--sh)}.faq summary{font-weight:800;color:#0a1730}.wa{background:linear-gradient(135deg,#16c784,#059669);box-shadow:0 12px 30px rgba(5,150,105,.35)}
+@media(max-width:960px){.hero-g{padding:74px 0 78px}.hero::before{background-image:linear-gradient(90deg,rgba(4,15,37,.95),rgba(4,15,37,.76)),url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&w=1400&q=80')}.cov-g:before{min-height:260px;order:2}.page-detail{padding:55px 0 65px}.detail-card{margin:0 auto}}
+@media(max-width:680px){.bar{min-height:72px}.logo{font-size:31px}.hero-g{padding:62px 0 66px}.hero h1{font-size:clamp(39px,11vw,54px)}.hero .sub{font-size:16px}.vis{min-height:260px}.orb{width:175px;height:175px}.chip{font-size:12px;padding:10px 12px}.sec{padding:68px 0}.logos{padding:28px 0}.marq li{min-width:115px;padding:10px 14px}.detail-card{border-radius:21px;padding:28px 22px}.detail-card h1{font-size:39px}.page-detail{padding:35px 0 45px}.dd-menu a .ic{width:34px;height:34px}.promo{padding-top:24px}.sl-slide{border-radius:20px}}
+
+
+/* COLORFUL CUSTOMER LOGOS — full-colour brand assets, clean cards, lively hover */
+.logos{background:radial-gradient(ellipse at 50% 0%,rgba(37,99,235,.28),transparent 55%),linear-gradient(115deg,#06132d,#0c2450 58%,#081a3b)!important;}
+.logos .lbl{color:#eaf4ff!important;text-shadow:0 0 22px rgba(56,189,248,.25);}
+.marq{gap:20px!important;align-items:stretch!important;}
+.marq li{position:relative;overflow:hidden;background:linear-gradient(145deg,#fff 0%,#f5f9ff 100%)!important;border:1px solid rgba(255,255,255,.9)!important;box-shadow:0 9px 24px rgba(0,0,0,.18),inset 0 1px 0 #fff!important;min-width:145px!important;min-height:78px!important;padding:13px 20px!important;transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease!important;}
+.marq li:before{content:none!important;display:none!important;background:none!important}
+.marq img{filter:none!important;opacity:1!important;max-height:48px!important;max-width:118px!important;width:auto!important;object-fit:contain!important;transform:translateZ(0);}
+.marq li:hover{transform:translateY(-5px)!important;border-color:#67e8f9!important;box-shadow:0 16px 32px rgba(14,165,233,.22),0 0 0 2px rgba(56,189,248,.12)!important;}
+.marq li:hover img{filter:none!important;opacity:1!important;transform:scale(1.06)!important;}
+@media(max-width:760px){.marq{gap:13px!important}.marq li{min-width:118px!important;min-height:68px!important;padding:10px 14px!important}.marq img{max-width:96px!important;max-height:42px!important}}
+
+
+/* Limerick Technologies brand-inspired wordmark: pink upper word + dark lower descriptor */
+.logo{display:inline-flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:0;font-size:36px;line-height:.88;letter-spacing:-.075em;color:#ed2458!important;font-weight:900;}
+.logo-word{display:block;color:#ed2458!important;font-weight:900;}
+.logo-word:after{content:none!important;display:none!important}
+.footer .logo-word{color:#ff4772!important;}
+.footer .logo-word:after{color:#42d9f5!important;}
+.logo-mark{display:none!important;}
+
+
+/* Compact FAQ question cards */
+.faq{padding:0 !important; border-radius:14px; overflow:hidden}
+.faq summary{padding:14px 20px !important; min-height:58px; font-size:15px; line-height:1.35}
+.faq div{padding:0 20px 16px !important}
+.faq-l{gap:10px}
+
+/* Explore dropdown refinements */
+.explore-menu{min-width:255px;padding:9px!important}
+.explore-menu a{display:flex!important;align-items:center;gap:12px;padding:12px!important;border-radius:12px;white-space:normal!important}
+.explore-menu a:hover{background:#eef5ff}
+.explore-symbol{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#e6edff,#d8fbff);font-size:19px}
+.explore-menu strong,.explore-menu small{display:block}
+.explore-menu strong{font-size:13px;color:var(--ink)}
+.explore-menu small{font-size:11px;color:var(--muted);margin-top:3px}
+
+
+/* Professional Explore dropdown icon treatment */
+.explore-menu .explore-symbol{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;flex:0 0 38px;border-radius:10px;background:rgba(37,99,235,.09);color:#3974e8;}
+.explore-menu .explore-icon{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;}
+.explore-menu a{display:flex;align-items:center;gap:12px;}
+.explore-menu a:hover .explore-symbol{background:rgba(37,99,235,.16);}
+
+</style>
+<style>
+/* CCTV & Home Automation page — scoped styles */
+.cctv-page{overflow:hidden;background:#f4f7fc;color:#4a5a72}
+.cctv-page .cctv-hero{position:relative;padding:76px 0 82px;background:radial-gradient(ellipse at 78% 24%,rgba(0,180,216,.22),transparent 35%),radial-gradient(ellipse at 15% 100%,rgba(37,99,235,.18),transparent 38%),linear-gradient(118deg,#06132d 0%,#0c2450 57%,#081a3b 100%);color:#fff}
+.cctv-page .cctv-hero:after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.2;background-image:linear-gradient(rgba(255,255,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.08) 1px,transparent 1px);background-size:42px 42px;mask-image:linear-gradient(90deg,transparent,#000)}
+.cctv-page .hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.02fr .98fr;gap:48px;align-items:center}
+.cctv-page .eyebrow{color:#67e8f9}
+.cctv-page h1{color:#fff;font-size:clamp(38px,5.3vw,64px);line-height:1.06;letter-spacing:-.045em;margin:8px 0 22px;max-width:650px}
+.cctv-page .hero-copy{font-size:clamp(16px,1.5vw,19px);line-height:1.75;color:#d8e7fb;max-width:610px}
+.cctv-page .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:30px}
+.cctv-page .hero-actions .btn-o{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.32);color:#fff}
+.cctv-page .hero-actions .btn-o:hover{background:rgba(255,255,255,.16);border-color:#67e8f9;color:#fff}
+.cctv-page .hero-note{font-size:13px;color:#a9c1df;margin-top:18px}
+.cctv-page .security-visual{min-height:390px;position:relative;display:grid;place-items:center}
+.cctv-page .visual-halo{position:absolute;width:min(90%,420px);aspect-ratio:1;border-radius:50%;background:radial-gradient(circle,rgba(0,180,216,.22),rgba(21,88,214,.08) 52%,transparent 72%);border:1px solid rgba(127,224,245,.18)}
+.cctv-page .visual-panel{position:relative;width:min(100%,440px);padding:18px;border:1px solid rgba(255,255,255,.22);border-radius:24px;background:linear-gradient(145deg,rgba(255,255,255,.16),rgba(255,255,255,.055));box-shadow:0 28px 70px rgba(0,0,0,.28);backdrop-filter:blur(8px)}
+.cctv-page .panel-top{display:flex;align-items:center;justify-content:space-between;color:#d9eaff;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:0 2px 14px}
+.cctv-page .live-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#34d399;box-shadow:0 0 12px #34d399;margin-right:6px}
+.cctv-page .cam-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cctv-page .cam-tile{position:relative;min-height:108px;overflow:hidden;border-radius:13px;background:linear-gradient(145deg,#244b78,#102344);border:1px solid rgba(255,255,255,.13);display:flex;align-items:center;justify-content:center}
+.cctv-page .cam-tile:before{content:"";position:absolute;inset:0;background:linear-gradient(160deg,transparent 42%,rgba(0,180,216,.24));}
+.cctv-page .cam-tile svg{width:45px;height:45px;color:#9deeff;stroke:currentColor;fill:none;stroke-width:1.5;position:relative;z-index:1}
+.cctv-page .cam-label{position:absolute;left:10px;bottom:8px;font-size:10px;color:#e9f7ff;letter-spacing:.03em}
+.cctv-page .panel-bottom{display:flex;align-items:center;justify-content:space-between;margin-top:13px;color:#d8e7fb;font-size:11px}
+.cctv-page .secure-pill{border-radius:999px;padding:6px 10px;background:rgba(52,211,153,.13);color:#a7f3d0;border:1px solid rgba(52,211,153,.3)}
+.cctv-page .float-chip{position:absolute;z-index:2;display:flex;align-items:center;gap:9px;padding:11px 14px;border-radius:14px;background:#fff;color:#102344;box-shadow:0 14px 34px rgba(0,0,0,.2);font-size:12px;font-weight:800}
+.cctv-page .float-chip span:first-child{display:grid;place-items:center;width:31px;height:31px;border-radius:10px;background:#e2faff;color:#087f9c;font-size:17px}
+.cctv-page .chip-one{top:30px;right:-5px}.cctv-page .chip-two{bottom:28px;left:-9px}
+.cctv-page .section{padding:78px 0}.cctv-page .section-head{max-width:760px;margin:0 auto 38px;text-align:center}.cctv-page .section-head .eyebrow{color:#1558d6}.cctv-page .section-head h2{font-size:clamp(29px,3.4vw,42px);margin:0 0 13px}.cctv-page .section-head p{font-size:16px}
+.cctv-page .service-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cctv-page .service-card{padding:27px 25px 28px;background:#fff;border:1px solid #e3e9f3;border-radius:20px;box-shadow:0 9px 28px rgba(10,31,68,.055);transition:transform .22s,box-shadow .22s,border-color .22s}
+.cctv-page .service-card:hover{transform:translateY(-5px);border-color:#a5eaf5;box-shadow:0 18px 36px rgba(10,31,68,.11)}
+.cctv-page .service-icon{width:52px;height:52px;display:grid;place-items:center;border-radius:15px;background:linear-gradient(135deg,#e4edff,#d9fbff);color:#1558d6;margin-bottom:20px}
+.cctv-page .service-icon svg{width:26px;height:26px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.cctv-page .service-card h3{font-size:20px;margin-bottom:10px}.cctv-page .service-card p{font-size:14px;line-height:1.75}
+.cctv-page .benefit-band{background:linear-gradient(120deg,#eaf3ff,#e9fbff);border-block:1px solid #dceaf7}
+.cctv-page .benefit-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:56px;align-items:center}
+.cctv-page .benefit-copy h2{font-size:clamp(29px,3.4vw,42px);margin:0 0 15px}.cctv-page .benefit-copy p{font-size:16px}
+.cctv-page .benefit-list{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.cctv-page .benefit-item{display:flex;gap:12px;padding:17px;background:rgba(255,255,255,.82);border:1px solid #dbe8f6;border-radius:15px}
+.cctv-page .checkmark{flex:0 0 25px;width:25px;height:25px;border-radius:50%;display:grid;place-items:center;background:#d9f8f9;color:#087f9c;font-weight:900}
+.cctv-page .benefit-item strong{display:block;color:#102344;font-size:14px;margin-bottom:3px}.cctv-page .benefit-item span:last-child{font-size:12px;line-height:1.55}
+.cctv-page .steps-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;counter-reset:step}
+.cctv-page .step-card{padding:25px;border-radius:18px;background:#fff;border:1px solid #e3e9f3;counter-increment:step}
+.cctv-page .step-num{width:43px;height:43px;display:grid;place-items:center;border-radius:13px;background:#0a1f44;color:#fff;font-weight:900;font-size:17px;margin-bottom:18px}
+.cctv-page .step-card h3{font-size:19px;margin-bottom:9px}.cctv-page .step-card p{font-size:14px}
+.cctv-page .faq-list{max-width:850px;margin:0 auto;display:grid;gap:12px}
+.cctv-page .faq-list details{background:#fff;border:1px solid #e3e9f3;border-radius:15px;padding:18px 21px;box-shadow:0 4px 15px rgba(10,31,68,.035)}
+.cctv-page .faq-list summary{cursor:pointer;list-style:none;position:relative;padding-right:30px;color:#102344;font-weight:800}.cctv-page .faq-list summary::-webkit-details-marker{display:none}.cctv-page .faq-list summary:after{content:"+";position:absolute;right:0;top:-3px;font-size:24px;color:#1558d6}.cctv-page .faq-list details[open] summary:after{content:"−"}.cctv-page .faq-list details p{padding-top:12px;font-size:14px}
+.cctv-page .final-cta{padding:0 0 78px}.cctv-page .cta-panel{position:relative;overflow:hidden;display:flex;align-items:center;justify-content:space-between;gap:28px;padding:clamp(28px,5vw,48px);border-radius:25px;background:radial-gradient(ellipse at 90% 0%,rgba(0,180,216,.25),transparent 42%),linear-gradient(115deg,#06132d,#0c2450 60%,#081a3b);color:#fff;box-shadow:0 18px 42px rgba(10,31,68,.18)}
+.cctv-page .cta-panel h2{color:#fff;font-size:clamp(26px,3vw,36px);margin-bottom:10px}.cctv-page .cta-panel p{max-width:650px;color:#d5e5f8;font-size:15px}.cctv-page .cta-panel .btn{white-space:nowrap;background:#fff;color:#0a1f44}.cctv-page .cta-panel .btn:hover{background:#dffaff;color:#0a1f44}
+.cctv-page .availability-note{text-align:center;font-size:12px;color:#7b8aa0;margin-top:20px}
+body.individual-page #main>section,body.individual-page #main>div{display:none!important}body.individual-page #main>.cctv-page{display:block!important}
+@media(max-width:900px){.cctv-page .hero-grid{grid-template-columns:1fr;gap:22px}.cctv-page .security-visual{min-height:340px}.cctv-page .service-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.cctv-page .benefit-grid{grid-template-columns:1fr;gap:28px}.cctv-page .steps-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:600px){.cctv-page .cctv-hero{padding:55px 0 58px}.cctv-page .security-visual{min-height:295px}.cctv-page .visual-panel{padding:12px}.cctv-page .cam-tile{min-height:86px}.cctv-page .chip-one{right:-2px;top:12px}.cctv-page .chip-two{left:-2px;bottom:9px}.cctv-page .float-chip{padding:8px 10px;font-size:10px}.cctv-page .section{padding:58px 0}.cctv-page .service-grid,.cctv-page .benefit-list,.cctv-page .steps-grid{grid-template-columns:1fr}.cctv-page .service-card{padding:23px}.cctv-page .cta-panel{align-items:flex-start;flex-direction:column}.cctv-page .cta-panel .btn{white-space:normal;width:100%}}
+@media(prefers-reduced-motion:reduce){.cctv-page *{transition:none!important;scroll-behavior:auto!important}}
+</style>
+
+<style id="remove-customer-logo-strips">
+.customer-logo-card::before, .customer-logo-card::after, .customer-logo::before, .customer-logo::after, .client-logo-card::before, .client-logo-card::after, .customer-card::before, .customer-card::after, .logo-card::before, .logo-card::after { content: none !important; display: none !important; background: none !important; border: 0 !important; }
+.customer-logo-card, .customer-logo, .client-logo-card, .customer-card, .logo-card { border-top: 0 !important; }
+</style>
+<style>
+/* Professional Explore menu icons */
+.explore-menu .explore-symbol{display:grid;place-items:center;flex:0 0 38px;width:38px;height:38px;border-radius:11px;background:linear-gradient(135deg,#e6edff,#d8fbff);font-size:0;color:#1558d6}
+.explore-menu .explore-icon{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+</style>
+<style id="lk-v9">
+@keyframes lkFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)}}
+@keyframes lkShine{0%,55%{left:-60%}100%{left:130%}}
+@keyframes lkPulse{0%,100%{box-shadow:0 0 0 0 rgba(37,99,235,.0)}50%{box-shadow:0 0 18px 2px rgba(37,99,235,.28)}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important}}
+.lk-hero-bg{background-size:cover!important;background-position:center right!important;background-repeat:no-repeat!important}
+.cctv-page .cctv-hero{background:linear-gradient(90deg,rgba(3,18,28,.9) 0%,rgba(3,18,28,.55) 40%,rgba(3,18,28,.05) 75%),url('images/cctv-hero.svg') center right/cover no-repeat!important;min-height:500px;display:flex;align-items:center}
+.cctv-page .cctv-hero:after{opacity:.06!important}
+.cctv-page .cctv-hero>.wrap{width:100%}
+.cctv-page .visual-halo{opacity:.4}
+.cctv-page .visual-panel{background:linear-gradient(145deg,rgba(255,255,255,.12),rgba(255,255,255,.04))!important}
+.cctv-page .final-cta{padding:0 0 40px}
+
+.cctv-page .service-card:nth-child(4n+1){--a:#2563eb;--b:#06b6d4;--t:#e6f0ff;--t2:#dcf9ff}
+.cctv-page .service-card:nth-child(4n+2){--a:#9333ea;--b:#ec4899;--t:#f3e8ff;--t2:#ffe4f1}
+.cctv-page .service-card:nth-child(4n+3){--a:#f59e0b;--b:#ef4444;--t:#fff3d6;--t2:#ffe3dc}
+.cctv-page .service-card:nth-child(4n+4){--a:#10b981;--b:#0ea5e9;--t:#dcfaec;--t2:#dcf4fb}
+
+.cctv-page .benefit-item:nth-child(4n+1){--a:#2563eb;--b:#06b6d4;--t:#e6f0ff;--t2:#dcf9ff}
+.cctv-page .benefit-item:nth-child(4n+2){--a:#9333ea;--b:#ec4899;--t:#f3e8ff;--t2:#ffe4f1}
+.cctv-page .benefit-item:nth-child(4n+3){--a:#f59e0b;--b:#ef4444;--t:#fff3d6;--t2:#ffe3dc}
+.cctv-page .benefit-item:nth-child(4n+4){--a:#10b981;--b:#0ea5e9;--t:#dcfaec;--t2:#dcf4fb}
+
+.cctv-page .step-card:nth-child(4n+1){--a:#2563eb;--b:#06b6d4;--t:#e6f0ff;--t2:#dcf9ff}
+.cctv-page .step-card:nth-child(4n+2){--a:#9333ea;--b:#ec4899;--t:#f3e8ff;--t2:#ffe4f1}
+.cctv-page .step-card:nth-child(4n+3){--a:#f59e0b;--b:#ef4444;--t:#fff3d6;--t2:#ffe3dc}
+.cctv-page .step-card:nth-child(4n+4){--a:#10b981;--b:#0ea5e9;--t:#dcfaec;--t2:#dcf4fb}
+
+.cctv-page .service-card,.cctv-page .benefit-item,.cctv-page .step-card{background:linear-gradient(145deg,var(--t),var(--t2))!important;border:2px solid var(--a)!important;box-shadow:0 14px 30px -14px var(--a)!important;position:relative;overflow:hidden;animation:lkFloat 4.6s ease-in-out infinite;transition:box-shadow .25s,filter .25s}
+.cctv-page .service-card:before,.cctv-page .benefit-item:before,.cctv-page .step-card:before{content:""!important;position:absolute!important;inset:0 auto 0 -60%;width:45%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent);transform:skewX(-20deg);animation:lkShine 5.5s ease-in-out infinite;pointer-events:none;display:block!important;height:auto!important;margin:0!important;color:transparent!important;font-size:0!important}
+.cctv-page .service-card:nth-child(2n),.cctv-page .benefit-item:nth-child(2n),.cctv-page .step-card:nth-child(2n){animation-delay:-1.4s}
+.cctv-page .service-card:nth-child(3n),.cctv-page .benefit-item:nth-child(3n),.cctv-page .step-card:nth-child(3n){animation-delay:-2.7s}
+.cctv-page .service-card:hover,.cctv-page .benefit-item:hover,.cctv-page .step-card:hover{animation-play-state:paused;box-shadow:0 22px 42px -12px var(--a)!important;filter:saturate(1.15)}
+.cctv-page .service-icon{background:linear-gradient(135deg,var(--a),var(--b))!important;color:#fff!important;box-shadow:0 8px 18px -6px var(--a)}
+.cctv-page .step-num{background:linear-gradient(135deg,var(--a),var(--b))!important}
+.cctv-page .checkmark{background:linear-gradient(135deg,var(--a),var(--b))!important;color:#fff!important}
+.cctv-page .benefit-item{border-radius:16px}
+.cctv-page .service-card>*,.cctv-page .step-card>*,.cctv-page .benefit-item>*{position:relative}
+.cctv-page .service-card h3{color:var(--a)}
+
+.cctv-page .faq-list details{max-width:700px;margin-left:auto;margin-right:auto;border:2px solid #2563eb!important;border-left:6px solid #7c3aed!important;border-radius:14px!important;padding:11px 16px!important;background:linear-gradient(120deg,#eef4ff,#f6edff)!important;box-shadow:0 8px 20px -10px rgba(37,99,235,.55)!important;transition:transform .2s,box-shadow .2s}
+.cctv-page .faq-list details:hover{transform:translateX(4px);box-shadow:0 12px 24px -10px rgba(124,58,237,.6)!important}
+.cctv-page .faq-list details[open]{background:linear-gradient(120deg,#e0ecff,#f0e0ff)!important;border-color:#7c3aed!important;border-left-color:#06b6d4!important}
+.cctv-page .faq-list summary{font-size:15px!important}
+.cctv-page .faq-list details p{font-size:13.5px!important;line-height:1.65!important}
+.cctv-page .faq-list{max-width:700px!important;gap:9px!important}</style>
+<style id="lk-v9b">.cctv-page .security-visual{display:none!important}
+.cctv-page .faq-list details{width:100%;justify-self:center}
+.corporate-landing .corp-hero-grid,.ott-page .ott-hero-grid,.cctv-page .hero-grid{grid-template-columns:minmax(0,640px)!important}
+.corporate-landing .corp-hero{background:linear-gradient(90deg,rgba(3,16,42,.92) 0%,rgba(3,16,42,.72) 42%,rgba(3,16,42,0) 78%),url('images/cloud-hero.svg') center right/cover no-repeat!important}
+.ott-page .ott-hero{background:linear-gradient(90deg,rgba(11,8,36,.92) 0%,rgba(11,8,36,.72) 42%,rgba(11,8,36,0) 78%),url('images/ott-hero.svg') center right/cover no-repeat!important}
+.cctv-page .cctv-hero{background:linear-gradient(90deg,rgba(3,18,28,.92) 0%,rgba(3,18,28,.72) 42%,rgba(3,18,28,0) 78%),url('images/cctv-hero.svg') center right/cover no-repeat!important}
+@media(max-width:700px){.corporate-landing .corp-hero{background:linear-gradient(180deg,rgba(3,16,42,.85),rgba(3,16,42,.55)),url('images/cloud-hero.svg') center/cover no-repeat!important}.ott-page .ott-hero{background:linear-gradient(180deg,rgba(11,8,36,.85),rgba(11,8,36,.55)),url('images/ott-hero.svg') center/cover no-repeat!important}.cctv-page .cctv-hero{background:linear-gradient(180deg,rgba(3,18,28,.85),rgba(3,18,28,.55)),url('images/cctv-hero.svg') center/cover no-repeat!important}}
+</style>
+<link rel="stylesheet" href="assets/site.css">
+</head>
+<body class="individual-page">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs>
+<symbol id="lk-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol>
+<symbol id="lk-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+<symbol id="lk-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol>
+<symbol id="lk-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol>
+<symbol id="lk-prev" viewBox="0 0 24 24"><path d="m15 6-6 6 6 6"/></symbol>
+<symbol id="lk-next" viewBox="0 0 24 24"><path d="m9 6 6 6-6 6"/></symbol>
+<symbol id="lk-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></symbol>
+<symbol id="lk-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></symbol>
+<symbol id="lk-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+<symbol id="lk-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol>
+<symbol id="lk-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol>
+<symbol id="lk-chat" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 1-11.7 7.1L4 20l.9-4.2A8 8 0 1 1 20 12z"/><path d="M9 11.5h.01M12 11.5h.01M15 11.5h.01"/></symbol>
+<symbol id="lk-fb" viewBox="0 0 24 24"><path d="M14 8h3V4h-3a4 4 0 0 0-4 4v3H7v4h3v6h4v-6h3l1-4h-4V8.5A.5.5 0 0 1 14 8z"/></symbol>
+<symbol id="lk-ig" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
+<symbol id="lk-yt" viewBox="0 0 24 24"><rect x="2.5" y="5" width="19" height="14" rx="4"/><path d="m10 9 5 3-5 3z"/></symbol>
+<symbol id="lk-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+<symbol id="lk-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></symbol>
+<symbol id="lk-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/></symbol>
+<symbol id="lk-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></symbol>
+<symbol id="lk-bld" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></symbol>
+<symbol id="lk-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol>
+<symbol id="lk-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol>
+<symbol id="lk-video" viewBox="0 0 24 24"><rect x="3" y="6" width="13" height="12" rx="2"/><path d="m16 10 5-3v10l-5-3"/></symbol>
+<symbol id="lk-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol>
+<symbol id="lk-eye" viewBox="0 0 24 24"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3"/></symbol>
+<symbol id="lk-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 21h4M12 3a6 6 0 0 0-3.5 10.9c.6.5 1 1.2 1 2.1h5c0-.9.4-1.6 1-2.1A6 6 0 0 0 12 3z"/></symbol>
+<symbol id="lk-live" viewBox="0 0 24 24"><circle cx="12" cy="12" r="2"/><path d="M7.8 7.8a6 6 0 0 0 0 8.4M16.2 7.8a6 6 0 0 1 0 8.4M4.9 4.9a10 10 0 0 0 0 14.2M19.1 4.9a10 10 0 0 1 0 14.2"/></symbol>
+<symbol id="lk-p2p" viewBox="0 0 24 24"><circle cx="5" cy="12" r="2.5"/><circle cx="19" cy="12" r="2.5"/><path d="M7.5 12h9"/></symbol>
+<symbol id="lk-sdwan" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></symbol>
+<symbol id="lk-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></symbol>
+<symbol id="lk-wifi" viewBox="0 0 24 24"><path d="M2 9a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.5 16a5 5 0 0 1 7 0M12 19.5h.01"/></symbol>
+<symbol id="lk-head" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2"/><rect x="3" y="14" width="4" height="6" rx="1.5"/><rect x="17" y="14" width="4" height="6" rx="1.5"/></symbol>
+<symbol id="lk-swap" viewBox="0 0 24 24"><path d="M7 7h12l-3-3M17 17H5l3 3"/></symbol>
+<symbol id="lk-inf" viewBox="0 0 24 24"><path d="M12 12c-2-3-3.5-4-5.5-4a4 4 0 0 0 0 8c2 0 3.5-1 5.5-4zm0 0c2 3 3.5 4 5.5 4a4 4 0 0 0 0-8c-2 0-3.5 1-5.5 4z"/></symbol>
+<symbol id="lk-fiber" viewBox="0 0 24 24"><path d="M4 18a8 8 0 1 1 16 0"/><path d="m12 18 4-6"/></symbol>
+<symbol id="lk-db" viewBox="0 0 24 24"><ellipse cx="12" cy="6" rx="8" ry="3"/><path d="M4 6v6c0 1.7 3.6 3 8 3s8-1.3 8-3V6M4 12v6c0 1.7 3.6 3 8 3s8-1.3 8-3v-6"/></symbol>
+<symbol id="lk-user" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></symbol>
+</defs></svg>
+<a class="skip" href="#main">Skip to content</a>
+
+<svg class="lkx-sprite" width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false"><defs><symbol id="lkx-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol><symbol id="lkx-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></symbol><symbol id="lkx-wa" viewBox="0 0 24 24"><path d="M3 21l1.65-4.8A9 9 0 1 1 8.1 19.4L3 21z"/><path d="M9 8.6c0 3.4 2.9 6.4 6.4 6.4l1.1-1.6-2-1-.9.9c-1-.4-2-1.4-2.4-2.4l.9-.9-1-2L9 8.6z"/></symbol><symbol id="lkx-ig" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol><symbol id="lkx-li" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol><symbol id="lkx-fb" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol><symbol id="lkx-yt" viewBox="0 0 24 24"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2 29 29 0 0 0 .46-5.25 29 29 0 0 0-.46-5.33z"/><path d="m9.75 15.02 5.75-3.27-5.75-3.27z"/></symbol><symbol id="lkx-chev" viewBox="0 0 24 24"><path d="m6 9 6 6 6-6"/></symbol><symbol id="lkx-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></symbol><symbol id="lkx-star" viewBox="0 0 24 24"><path class="lkx-fill" d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01z"/></symbol><symbol id="lkx-check" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></symbol><symbol id="lkx-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol><symbol id="lkx-plus" viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></symbol><symbol id="lkx-net" viewBox="0 0 24 24"><circle cx="12" cy="5" r="2.5"/><circle cx="5" cy="19" r="2.5"/><circle cx="19" cy="19" r="2.5"/><path d="M12 7.5v4M12 11.5 6.5 17M12 11.5l5.5 5.5"/></symbol><symbol id="lkx-bld" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="1"/><path d="M9 7h2M13 7h2M9 11h2M13 11h2M9 15h2M13 15h2M10 21v-3h4v3"/></symbol><symbol id="lkx-sdwan" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="5" rx="1"/><rect x="3" y="16" width="6" height="5" rx="1"/><rect x="15" y="16" width="6" height="5" rx="1"/><path d="M12 8v4M6 16v-4h12v4"/></symbol><symbol id="lkx-cloud" viewBox="0 0 24 24"><path d="M7 18a4 4 0 0 1-.5-8A6 6 0 0 1 18 9a4.5 4.5 0 0 1-.5 9H7z"/></symbol><symbol id="lkx-wifi" viewBox="0 0 24 24"><path d="M2.5 9a15 15 0 0 1 19 0M5.5 12.5a10.5 10.5 0 0 1 13 0M8.5 16a6 6 0 0 1 7 0M12 19.5h.01"/></symbol><symbol id="lkx-tv" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></symbol><symbol id="lkx-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6l8-3z"/><path d="m9 12 2 2 4-4"/></symbol><symbol id="lkx-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></symbol><symbol id="lkx-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 17h7"/></symbol><symbol id="lkx-userplus" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20v-1.5a6.5 6.5 0 0 1 13 0V20M17 8h5M19.5 5.5v5"/></symbol><symbol id="lkx-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.5 9a2.6 2.6 0 1 1 4.4 1.9c-1.2 1-1.9 1.3-1.9 2.8M12 17.2v.1"/></symbol><symbol id="lkx-bolt" viewBox="0 0 24 24"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol><symbol id="lkx-inf" viewBox="0 0 24 24"><path d="M12 12c2-2.7 3.6-4 5.5-4a4 4 0 0 1 0 8c-1.9 0-3.5-1.3-5.5-4zm0 0c-2-2.7-3.6-4-5.5-4a4 4 0 0 0 0 8c1.9 0 3.5-1.3 5.5-4z"/></symbol><symbol id="lkx-head" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0 1 16 0v2M4 14h3v5H5a1 1 0 0 1-1-1v-4zM20 14h-3v5h2a1 1 0 0 0 1-1v-4zM17 19c0 1.5-2 2-5 2"/></symbol><symbol id="lkx-home" viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10M10 20v-6h4v6"/></symbol><symbol id="lkx-laptop" viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 20h20"/></symbol><symbol id="lkx-route" viewBox="0 0 24 24"><path d="M4 7h4l8 10h4M4 17h4l3-4M13 11l3-4h4M18 5l2 2-2 2M18 15l2 2-2 2"/></symbol><symbol id="lkx-layers" viewBox="0 0 24 24"><path d="M12 3 3 8l9 5 9-5-9-5zM3 13l9 5 9-5"/></symbol><symbol id="lkx-coins" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M14.5 9a3 3 0 0 0-5 1.5c0 2.5 5 1.5 5 4a3 3 0 0 1-5 1.5M12 6.5v1.5M12 16v1.5"/></symbol><symbol id="lkx-lock" viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="10" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></symbol><symbol id="lkx-server" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="6" rx="1.5"/><rect x="3" y="14" width="18" height="6" rx="1.5"/><path d="M7 7h.01M7 17h.01"/></symbol><symbol id="lkx-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol><symbol id="lkx-play" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m10 9 5 3-5 3z"/></symbol><symbol id="lkx-map" viewBox="0 0 24 24"><path d="M9 4 3 6.5V20l6-2.5 6 2.5 6-2.5V4l-6 2.5L9 4zM9 4v13.5M15 6.5V20"/></symbol></defs></svg><div class="lkx-topbar"><div class="lkx-wrap"><div class="lkx-tb-l"><a href="tel:+912048504814"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-phone"/></svg>020-48504814</a><a class="lkx-em" href="mailto:info@limerick.co.in"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-mail"/></svg>info@limerick.co.in</a></div><div class="lkx-soc"><a class="lkx-s-fb" href="https://www.facebook.com/share/1FQTCPAZKZ/" target="_blank" rel="noopener" aria-label="Limerick on Facebook" title="Facebook"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-fb"/></svg></a><a class="lkx-s-ig" href="https://www.instagram.com/limerickinternet.pune" target="_blank" rel="noopener" aria-label="Limerick on Instagram" title="Instagram"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-ig"/></svg></a><a class="lkx-s-li" href="https://www.linkedin.com/company/limericknetworks/" target="_blank" rel="noopener" aria-label="Limerick on LinkedIn" title="LinkedIn"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-li"/></svg></a><a class="lkx-s-yt" href="https://www.youtube.com/@limerickinternet" target="_blank" rel="noopener" aria-label="Limerick on YouTube" title="YouTube"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-yt"/></svg></a><a class="lkx-s-wa" href="https://wa.me/919175884641" target="_blank" rel="noopener" aria-label="Limerick on WhatsApp" title="WhatsApp"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-wa"/></svg></a></div></div></div><header class="lkx-header"><div class="lkx-wrap lkx-bar"><a class="lkx-logo" href="index.html" aria-label="Limerick Network home">limerick</a><nav class="lkx-nav" id="lkx-nav" aria-label="Main"><a href="index.html">Home</a><a href="about-us.html">About Us</a><div class="lkx-dd is-active"><button type="button" aria-expanded="false" aria-haspopup="true">Services <svg class="lkx-ic" aria-hidden="true"><use href="#lkx-chev"/></svg></button><div class="lkx-menu"><a href="internet-leased-line.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-net"/></svg></span><span class="lkx-t">Internet Leased Line</span></a><a href="corporate-broadband.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-bld"/></svg></span><span class="lkx-t">Corporate Broadband</span></a><a href="sd-wan.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-sdwan"/></svg></span><span class="lkx-t">SD-WAN</span></a><a href="cloud-managed-services.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-cloud"/></svg></span><span class="lkx-t">Cloud &amp; Managed Services</span></a><a href="fiber-broadband.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-wifi"/></svg></span><span class="lkx-t">Fiber Broadband</span></a><a href="ott-live-tv.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-play"/></svg></span><span class="lkx-t">OTT &amp; Live TV</span></a><a href="cctv-home-automation.html" aria-current="page"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-shield"/></svg></span><span class="lkx-t">CCTV &amp; Home Automation</span></a></div></div><div class="lkx-dd"><button type="button" aria-expanded="false" aria-haspopup="true">Explore <svg class="lkx-ic" aria-hidden="true"><use href="#lkx-chev"/></svg></button><div class="lkx-menu"><a href="management.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-gear"/></svg></span><span class="lkx-t">Management</span></a><a href="limerick-event.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-cal"/></svg></span><span class="lkx-t">Limerick Event</span></a><a href="join-limerick.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-userplus"/></svg></span><span class="lkx-t">Join Limerick</span></a><a href="faq.html"><span class="lkx-mi"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-help"/></svg></span><span class="lkx-t">FAQ</span></a></div></div><a href="contact-us.html">Contact Us</a></nav><a class="lkx-enq" href="index.html#enquiry">Enquiry</a><button type="button" class="lkx-burger" id="lkx-burger" aria-label="Open menu" aria-expanded="false" aria-controls="lkx-nav"><span></span><span></span><span></span></button><span id="js-year" hidden></span><nav id="js-nav" hidden></nav><button type="button" id="js-burger" hidden tabindex="-1"></button></div></header>
+
+<main id="main">
+<div class="cctv-page">
+  <section class="cctv-hero"><div class="wrap hero-grid">
+    <div class="hero-content"><span class="eyebrow">Smart security · Connected living</span><h1>Feel safer. Live smarter.</h1><p class="hero-copy">Bring your home or business into better view with CCTV monitoring and practical home automation options—designed around the way you live and work.</p>
+      
+      
+    </div>
+    <div class="security-visual" aria-label="Illustration of a connected security monitoring dashboard"><div class="visual-halo"></div>
+      <div class="visual-panel"><div class="panel-top"><span>Security overview</span><span><i class="live-dot"></i>System ready</span></div>
+        <div class="cam-grid">
+          <div class="cam-tile"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M8 20h21l8 6v7H8z"/><path d="M15 20v-5a5 5 0 0 1 10 0v5M37 26l5-3v13l-5-3M14 33v5m13-5v5"/></svg><span class="cam-label">ENTRY VIEW</span></div>
+          <div class="cam-tile"><svg viewBox="0 0 48 48" aria-hidden="true"><rect x="7" y="12" width="34" height="25" rx="4"/><circle cx="24" cy="24" r="7"/><circle cx="24" cy="24" r="2"/><path d="M14 12l3-5h14l3 5"/></svg><span class="cam-label">CAMERA FEED</span></div>
+          <div class="cam-tile"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M24 5l15 6v11c0 10-6 16-15 21C15 38 9 32 9 22V11z"/><path d="M17 24l5 5 10-11"/></svg><span class="cam-label">SECURE ZONE</span></div>
+          <div class="cam-tile"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M17 30a11 11 0 1 1 14 0c-3 2-3 4-3 6h-8c0-2 0-4-3-6zM20 41h8M21 36h6"/><path d="M24 2v4M5 21h4M39 21h4M10 8l3 3M38 8l-3 3"/></svg><span class="cam-label">SMART CONTROL</span></div>
+        </div><div class="panel-bottom"><span>Connected monitoring concept</span><span class="secure-pill">● Connected</span></div>
+      </div>
+      <div class="float-chip chip-one"><span>⌂</span><span>Home & business<br>protection</span></div><div class="float-chip chip-two"><span>⌁</span><span>Control from<br>connected devices</span></div>
+    </div>
+  </div></section>
+  <section class="section" id="cctv-services"><div class="wrap"><div class="section-head"><span class="eyebrow">Solutions for your space</span><h2>Security and comfort, connected</h2><p>Choose the combination that fits your property, daily routine and peace-of-mind priorities.</p></div>
+    <div class="service-grid">
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 8h12l5 4v4H3zM7 8V5a3 3 0 0 1 6 0v3M20 12l2-2v8l-2-2M6 16v3m9-3v3"/></svg></div><h3>CCTV Monitoring</h3><p>Explore camera coverage for entrances, common areas, offices, shops and other important spaces.</p></article>
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M9 6h6M10 18h4"/><circle cx="12" cy="12" r="2"/></svg></div><h3>Remote Viewing</h3><p>Where supported by the selected system, check camera views from a compatible phone or device.</p></article>
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-11V5l-8-3-8 3v6c0 7 8 11 8 11z"/><path d="m9 12 2 2 4-4"/></svg></div><h3>Security Alerts</h3><p>Discuss alert and recording options that can help you stay informed about activity at your property.</p></article>
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M8 14a7 7 0 1 1 8 0c-1.5 1-2 2-2 4h-4c0-2-.5-3-2-4z"/><path d="M12 4v2M4 11h2M18 11h2"/></svg></div><h3>Smart Lighting</h3><p>Explore connected lighting and control options that suit your rooms, routines and usage needs.</p></article>
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7M7 10h.01M17 10h.01"/></svg></div><h3>Connected Home</h3><p>Bring selected smart devices together for more convenient control of your everyday environment.</p></article>
+      <article class="service-card"><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 16 0v5a2 2 0 0 1-2 2h-2v-6h4M4 13h4v6H6a2 2 0 0 1-2-2z"/><path d="M9 21h6"/></svg></div><h3>Planning & Support</h3><p>Get help discussing camera placement, connectivity requirements and suitable system options.</p></article>
+    </div>
+  </div></section>
+  <section class="section benefit-band"><div class="wrap benefit-grid"><div class="benefit-copy"><span class="eyebrow">Designed around you</span><h2>Useful features. Thoughtfully planned.</h2><p>Every property is different. We can help you identify what matters most before choosing a security or automation setup.</p></div>
+    <div class="benefit-list"><div class="benefit-item"><span class="checkmark">✓</span><div><strong>Coverage planning</strong><span>Discuss the areas you want to monitor.</span></div></div><div class="benefit-item"><span class="checkmark">✓</span><div><strong>Remote access options</strong><span>Review compatible viewing and control features.</span></div></div><div class="benefit-item"><span class="checkmark">✓</span><div><strong>Network readiness</strong><span>Consider connectivity and Wi-Fi requirements.</span></div></div><div class="benefit-item"><span class="checkmark">✓</span><div><strong>Flexible setup</strong><span>Start with the priorities that suit your space.</span></div></div></div>
+  </div></section>
+  <section class="section"><div class="wrap"><div class="section-head"><span class="eyebrow">Simple process</span><h2>From planning to connected living</h2><p>A clear path to finding the right setup for your home or business.</p></div><div class="steps-grid"><article class="step-card"><div class="step-num">01</div><h3>Tell us what you need</h3><p>Share your property type, key areas and the features you have in mind.</p></article><article class="step-card"><div class="step-num">02</div><h3>Review suitable options</h3><p>Discuss coverage, devices, connectivity and installation requirements.</p></article><article class="step-card"><div class="step-num">03</div><h3>Confirm the next steps</h3><p>Our team can help clarify feasibility, availability and the way forward.</p></article></div></div></section>
+  <section class="section" style="padding-top:0"><div class="wrap"><div class="section-head"><span class="eyebrow">Common questions</span><h2>CCTV & home automation FAQs</h2></div><div class="faq-list"><details><summary>Can I view CCTV cameras on my phone?</summary><p>Many systems support remote viewing through a compatible app, subject to the selected equipment, setup and internet connectivity.</p></details><details><summary>Can CCTV and home automation be planned together?</summary><p>Yes, compatible options can be discussed together. The final combination depends on the devices, property and your requirements.</p></details><details><summary>Will I need an internet connection?</summary><p>Remote access and connected features generally require suitable network connectivity. Recording and other functions depend on the system selected.</p></details><details><summary>How do I get a quote for my property?</summary><p>Use the enquiry link and share your location and requirements. The team can help confirm service availability and the next steps.</p></details></div></div></section>
+  
+</div>
+</main>
+
+<footer class="lkx-footer"><div class="lkx-wrap"><div class="lkx-fg"><div><a class="lkx-logo" href="index.html">limerick</a><p>Internet leased line, business connectivity, home broadband and OTT solutions across India.</p><div class="lkx-soc"><a class="lkx-s-fb" href="https://www.facebook.com/share/1FQTCPAZKZ/" target="_blank" rel="noopener" aria-label="Limerick on Facebook" title="Facebook"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-fb"/></svg></a><a class="lkx-s-ig" href="https://www.instagram.com/limerickinternet.pune" target="_blank" rel="noopener" aria-label="Limerick on Instagram" title="Instagram"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-ig"/></svg></a><a class="lkx-s-li" href="https://www.linkedin.com/company/limericknetworks/" target="_blank" rel="noopener" aria-label="Limerick on LinkedIn" title="LinkedIn"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-li"/></svg></a><a class="lkx-s-yt" href="https://www.youtube.com/@limerickinternet" target="_blank" rel="noopener" aria-label="Limerick on YouTube" title="YouTube"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-yt"/></svg></a><a class="lkx-s-wa" href="https://wa.me/919175884641" target="_blank" rel="noopener" aria-label="Limerick on WhatsApp" title="WhatsApp"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-wa"/></svg></a></div><a class="lkx-rate" href="https://g.page/r/CUtTT3jyCOn7EBM/review" target="_blank" rel="noopener"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-star"/></svg>Rate us on Google</a></div><div><h4>Services</h4><ul><li><a href="internet-leased-line.html">Internet Leased Line</a></li><li><a href="corporate-broadband.html">Corporate Broadband</a></li><li><a href="sd-wan.html">SD-WAN</a></li><li><a href="cloud-managed-services.html">Cloud &amp; Managed Services</a></li><li><a href="fiber-broadband.html">Fiber Broadband</a></li><li><a href="ott-live-tv.html">OTT &amp; Live TV</a></li><li><a href="cctv-home-automation.html">CCTV &amp; Home Automation</a></li></ul></div><div><h4>Company</h4><ul><li><a href="index.html">Home</a></li><li><a href="about-us.html">About Us</a></li><li><a href="management.html">Management</a></li><li><a href="limerick-event.html">Limerick Event</a></li><li><a href="join-limerick.html">Join Limerick</a></li><li><a href="faq.html">FAQ</a></li><li><a href="contact-us.html">Contact Us</a></li></ul></div><div><h4>Reach us</h4><ul><li><a href="tel:+912048504814">020-48504814</a></li><li><a href="mailto:info@limerick.co.in">info@limerick.co.in</a></li><li><a href="mailto:support@limerick.co.in">support@limerick.co.in</a></li><li class="lkx-addr"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-pin"/></svg><span><b>Head Office</b><a href="https://maps.app.goo.gl/bNqEzdbqJe74sRMz7" target="_blank" rel="noopener">Vega Center, A Wing, 6th Floor, Shankar Sheth Road, Swargate, Pune - 411037.</a></span></li><li class="lkx-addr"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-pin"/></svg><span><b>Branch Office</b><a href="https://maps.app.goo.gl/9YSot8mEPgkLv56y9" target="_blank" rel="noopener">Office No. 17, Samruddhi Center, Kharadi Bypass, Pune - 411014.</a></span></li></ul></div></div><div class="lkx-fb"><span>© <span id="lkx-yr">2026</span> Limerick Network. All rights reserved.</span><nav aria-label="Legal"><a href="privacy-policy.html">Privacy Policy</a><a href="refund-policy.html">Refund Policy</a></nav></div></div></footer><a class="lkx-wa" href="https://wa.me/919175884641" target="_blank" rel="noopener" aria-label="Chat with Limerick on WhatsApp"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-wa"/></svg></a><div class="lkx-mbar"><a href="tel:+912048504814"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-phone"/></svg>Call us</a><a href="https://wa.me/919175884641" target="_blank" rel="noopener"><svg class="lkx-ic" aria-hidden="true"><use href="#lkx-wa"/></svg>WhatsApp</a></div>
+
+<script>
+(function(){
+/* EDIT: paste your form service URL between the quotes (e.g. a Formspree endpoint). Leave empty until connected. */
+var FORM_ENDPOINT="";
+var $=function(id){return document.getElementById(id)};
+document.documentElement.classList.add("js");
+var reduce=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+/* menu */
+var nav=$("js-nav"),burger=$("js-burger");
+burger.addEventListener("click",function(){var o=nav.classList.toggle("open");burger.setAttribute("aria-expanded",o)});
+document.querySelectorAll(".dd>button").forEach(function(b){b.addEventListener("click",function(){var d=b.parentElement,o=!d.classList.contains("open");document.querySelectorAll(".dd.open").forEach(function(x){x.classList.remove("open");x.firstElementChild.setAttribute("aria-expanded","false")});d.classList.toggle("open",o);b.setAttribute("aria-expanded",o)})});
+nav.querySelectorAll("a").forEach(function(a){a.addEventListener("click",function(){nav.classList.remove("open");burger.setAttribute("aria-expanded","false");document.querySelectorAll(".dd.open").forEach(function(x){x.classList.remove("open")})})});
+document.addEventListener("click",function(e){if(!e.target.closest(".dd"))document.querySelectorAll(".dd.open").forEach(function(x){x.classList.remove("open");x.firstElementChild.setAttribute("aria-expanded","false")})});
+
+/* promo slider */
+var sl=$("js-sl"),slides=sl.querySelectorAll(".sl-slide"),dots=$("js-sl-dots"),cur=0,timer=null,hov=false,DELAY=7000;
+slides.forEach(function(s,i){var b=document.createElement("button");b.type="button";b.setAttribute("aria-label","Go to slide "+(i+1));b.addEventListener("click",function(){go(i,true)});dots.appendChild(b)});
+function paint(){slides.forEach(function(s,i){var on=i===cur;s.classList.toggle("on",on);s.setAttribute("aria-hidden",on?"false":"true");s.querySelectorAll("a").forEach(function(a){a.tabIndex=on?0:-1});dots.children[i].classList.toggle("on",on)})}
+function stop(){clearInterval(timer);timer=null}
+function start(){stop();if(!reduce&&!hov&&!document.hidden)timer=setInterval(function(){go(cur+1)},DELAY)}
+function go(i,u){cur=(i+slides.length)%slides.length;paint();if(u)start()}
+$("js-sl-prev").addEventListener("click",function(){go(cur-1,true)});
+$("js-sl-next").addEventListener("click",function(){go(cur+1,true)});
+sl.addEventListener("mouseenter",function(){hov=true;stop()});sl.addEventListener("mouseleave",function(){hov=false;start()});
+sl.addEventListener("focusin",function(){hov=true;stop()});sl.addEventListener("focusout",function(){hov=false;start()});
+var sx=0,sy=0;sl.addEventListener("touchstart",function(e){sx=e.touches[0].clientX;sy=e.touches[0].clientY},{passive:true});
+sl.addEventListener("touchend",function(e){var dx=e.changedTouches[0].clientX-sx,dy=e.changedTouches[0].clientY-sy;if(Math.abs(dx)>50&&Math.abs(dx)>Math.abs(dy))go(dx<0?cur+1:cur-1,true)},{passive:true});
+document.addEventListener("visibilitychange",start);
+paint();start();
+
+/* logos: duplicate for seamless loop + text fallback */
+var marq=$("js-marq")||document.createElement("ul");
+Array.prototype.slice.call(marq.children).forEach(function(li){var c=li.cloneNode(true);c.setAttribute("aria-hidden","true");c.querySelector("img").alt="";marq.appendChild(c)});
+marq.querySelectorAll("img").forEach(function(img){img.addEventListener("error",function(){var li=img.parentNode,t=img.getAttribute("alt")||"";img.remove();li.textContent=t})});
+
+/* form */
+var form=$("js-form"),sel=$("f-service"),st=$("js-status"),btn=$("js-submit");
+document.querySelectorAll("[data-service]").forEach(function(el){el.addEventListener("click",function(){var v=el.getAttribute("data-service");for(var i=0;i<sel.options.length;i++){if(sel.options[i].text===v){sel.selectedIndex=i;break}}})});
+var F={name:["f-name","f-name-e"],mobile:["f-mobile","f-mobile-e"],email:["f-email","f-email-e"],loc:["f-loc","f-loc-e"],service:["f-service","f-service-e"],consent:["f-consent","f-consent-e"]};
+function setErr(k,m){var f=$(F[k][0]),e=$(F[k][1]);e.textContent=m||"";if(m)f.setAttribute("aria-invalid","true");else f.removeAttribute("aria-invalid");return !m}
+function validate(){
+var name=$("f-name").value.trim(),mob=$("f-mobile").value.replace(/[\s\-()]/g,"").replace(/^(\+?91|0)(?=\d{10}$)/,""),email=$("f-email").value.trim(),loc=$("f-loc").value.trim(),ok=true,first=null;
+function chk(k,m){if(!setErr(k,m)){ok=false;if(!first)first=$(F[k][0])}}
+chk("name",name.length<2?"Please enter your full name.":"");
+chk("mobile",/^[6-9]\d{9}$/.test(mob)?"":"Please enter a valid 10-digit mobile number.");
+chk("email",email&&!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(email)?"Please enter a valid email address.":"");
+chk("loc",loc.length<2?"Please enter your area or city.":"");
+chk("service",sel.value?"":"Please select a service.");
+chk("consent",$("f-consent").checked?"":"Please tick the box so we can contact you.");
+if(first)first.focus();return ok}
+function show(t,h){st.className="status "+t;st.innerHTML=h}
+form.addEventListener("submit",function(e){
+e.preventDefault();st.className="status";st.innerHTML="";
+if($("f-company").value)return;
+if(!validate())return;
+if(!FORM_ENDPOINT){var WA_NUMBER="919175884641";var gv=function(n){var e=form.querySelector('[name="'+n+'"]');return e&&e.value?e.value.trim():""};var lines=["*New Enquiry - Limerick Network*","Name: "+gv("name"),"Mobile: "+gv("mobile")];if(gv("email"))lines.push("Email: "+gv("email"));lines.push("Location: "+gv("location"),"Service: "+gv("service"));if(gv("message"))lines.push("Message: "+gv("message"));var url="https://wa.me/"+WA_NUMBER+"?text="+encodeURIComponent(lines.join("\n"));var w=window.open(url,"_blank");if(w){try{w.opener=null}catch(x){}}else{window.location.href=url}show("ok","Opening WhatsApp... please press <b>Send</b> there so your enquiry reaches our team. <a href=\""+url+"\" target=\"_blank\" rel=\"noopener\">Open WhatsApp again</a>.");form.reset();return}
+btn.disabled=true;var old=btn.textContent;btn.textContent="Sending...";
+fetch(FORM_ENDPOINT,{method:"POST",body:new FormData(form),headers:{Accept:"application/json"}}).then(function(r){
+if(r.ok){show("ok","Thank you! We've received your enquiry and will contact you shortly.");form.reset()}else{throw new Error("HTTP "+r.status)}
+}).catch(function(){show("bad","Sorry, something went wrong and your enquiry was not sent. Please try again, or call <a href=\"tel:+912048504814\">020-48504814</a> or email <a href=\"mailto:info@limerick.co.in\">info@limerick.co.in</a>.")}).then(function(){btn.disabled=false;btn.textContent=old})});
+Object.keys(F).forEach(function(k){var el=$(F[k][0]);el.addEventListener("input",function(){setErr(k,"")});el.addEventListener("change",function(){setErr(k,"")})});
+
+/* reveal */
+var items=document.querySelectorAll(".rv");
+if("IntersectionObserver" in window&&!reduce){var io=new IntersectionObserver(function(en){en.forEach(function(x){if(x.isIntersecting){x.target.classList.add("in");io.unobserve(x.target)}})},{threshold:.1,rootMargin:"0px 0px -30px 0px"});items.forEach(function(el){io.observe(el)})}else{items.forEach(function(el){el.classList.add("in")})}
+$("js-year").textContent=new Date().getFullYear();
+})();
+</script>
+<script src="assets/site.js"></script>
+<style id="lk-v20-visibility">:root{--text:#1e293b;--muted:#334155;--lk-text:#1e293b;--lk-muted:#334155}
+p,li{-webkit-font-smoothing:antialiased}
+.ab-card p,.ab-head p,.event-card p,.person-info p,.value-item p,.section-head p,.connectivity-card p,.connectivity-heading p{color:#1e293b!important;font-weight:500}
+</style>
+<style id="lk-hero-v11">
+/* hero v11: page-relevant photo, more visible, highlighted text */
+body .cctv-page .cctv-hero{background:linear-gradient(90deg,rgba(6,16,40,.55) 0%,rgba(6,16,40,.22) 55%,rgba(6,16,40,.05) 100%),url('https://unsplash.com/photos/bt41lw9i6Kc/download?force=true&w=2000') center/cover no-repeat,url('images/cctv-hero.svg') center/cover no-repeat!important;min-height:520px;display:flex;align-items:center;padding-top:60px;padding-bottom:60px}
+body .cctv-page .cctv-hero:before,body .cctv-page .cctv-hero:after{display:none!important}
+body .cctv-page .cctv-hero .hero-grid{grid-template-columns:minmax(0,640px)!important;display:grid}
+body .cctv-page .cctv-hero .security-visual{display:none!important}
+body .cctv-page .cctv-hero .hero-content{background:rgba(6,16,40,.62);-webkit-backdrop-filter:blur(7px);backdrop-filter:blur(7px);border:1px solid rgba(255,255,255,.2);border-left:6px solid #22d3ee;border-radius:22px;padding:34px 38px;max-width:640px;box-shadow:0 22px 55px rgba(0,0,0,.4)}
+body .cctv-page .cctv-hero .hero-content h1{color:#fff!important;text-shadow:0 2px 16px rgba(0,0,0,.6)}body .cctv-page .cctv-hero .hero-content h1 em{color:#67e8f9!important}body .cctv-page .cctv-hero .hero-content p{color:#eef5ff!important;text-shadow:0 1px 8px rgba(0,0,0,.5);max-width:none!important}
+@media(max-width:700px){body .cctv-page .cctv-hero{min-height:0;padding-top:36px;padding-bottom:36px;background:linear-gradient(180deg,rgba(6,16,40,.5),rgba(6,16,40,.2)),url('https://unsplash.com/photos/bt41lw9i6Kc/download?force=true&w=2000') center/cover no-repeat,url('images/cctv-hero.svg') center/cover no-repeat!important}body .cctv-page .cctv-hero .hero-content{padding:24px 22px;border-radius:18px}}
+</style>
+</body>
+</html>
+
+<style id="customer-logo-strip-final-fix">.marq li::before,.marq li::after{content:none!important;display:none!important;background:none!important;border:0!important;height:0!important;box-shadow:none!important}.marq li{border-top:1px solid rgba(255,255,255,.9)!important}</style>
